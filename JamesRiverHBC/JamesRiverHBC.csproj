@@ -181,6 +181,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\ahaLogo.jpg" />
+    <Content Include="Content\images\findUs.png" />
+    <Content Include="Content\images\jrhbAnnualParty.png" />
     <Content Include="Content\images\jrhbCrest.jpg" />
     <Content Include="Content\images\jrhbCrestClear.png" />
     <Content Include="Content\images\stein.PNG" />
@@ -254,6 +256,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Meetings.cshtml" />
+    <Content Include="Views\Home\ClubEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

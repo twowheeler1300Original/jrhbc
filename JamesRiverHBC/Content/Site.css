@@ -22,3 +22,40 @@ select,
 textarea {
     max-width: 280px;
 }
+.ClubEventsScroll
+{
+
+    overflow-y: scroll;
+    overflow-wrap:normal;
+    width:auto;
+    height:400px;
+}
+.ClubEventsRow{
+        margin-left:20px;
+         border-top: 3px solid #354a16; margin-bottom:10px;
+}
+.ClubEventsRowTitle{
+    font-weight:700;
+    color:#354a16;
+    font-size:x-large;
+}
+.RedBold
+{
+    font-weight:700;
+    color:red;
+}
+.announcement a:link {color:darkgreen}
+.announcement
+{
+    padding-left:10px;
+    padding-right: 10px;
+    padding-bottom:10px;
+    padding-top:10px;
+    background-color:darkkhaki;
+    position:absolute;
+    top:280px;
+    right:110px;
+    width:300px;
+    height:200px;
+    text-decoration:none;color: #354a16;
+}

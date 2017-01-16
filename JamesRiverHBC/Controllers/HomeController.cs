@@ -19,6 +19,14 @@ namespace JamesRiverHBC.Controllers
             return View();
         }
 
+        public ActionResult ClubEvents()
+        {
+            ViewBag.Message = "We're heating the mash water now.";
+
+            return View();
+        }
+
+
         public ActionResult Contact()
         {
             ViewBag.Message = "We're heating the mash water now.";

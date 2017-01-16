@@ -22,9 +22,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
-                    <li>@Html.ActionLink("Club History", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Club Events", "ClubEvents", "Home")</li>
                     <li>@Html.ActionLink("Meetings", "Meetings", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Club History", "About", "Home")</li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
@@ -34,7 +35,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - James River Homebrewers Club</p>
+            <p>&copy; @DateTime.Now.Year - James River HomeBrewers Club  <a href="https://www.facebook.com/groups/659117107521024/" target="_blank"><img width="75px" src="~/Content/images/findUs.png" alt="Find us on Facebook" /></a> </p>
         </footer>
     </div>
 
