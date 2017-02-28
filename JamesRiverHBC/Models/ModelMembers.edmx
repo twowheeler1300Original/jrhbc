@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="jrhbMembersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameFirst" Type="nvarchar" MaxLength="20" />
+          <Property Name="NameMiddle" Type="nvarchar" MaxLength="20" />
+          <Property Name="NameLast" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneHome" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneMobileText" Type="bit" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="2" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="HomebreweryName" Type="nvarchar" MaxLength="200" />
+          <Property Name="ProBrewer" Type="bit" />
+          <Property Name="DateEntered" Type="datetime" />
+          <Property Name="DateMemberSince" Type="date" />
+          <Property Name="DateLastModified" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MembershipDues">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberId" Type="int" Nullable="false" />
+          <Property Name="ClubYear" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="TXN_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayPalStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="PayPalInvoice" Type="nvarchar" MaxLength="50" />
+          <Property Name="Paid" Type="bit" Nullable="false" />
+          <Property Name="DateEntered" Type="datetime" Nullable="false" />
+          <Property Name="DatePaid" Type="datetime" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_MembershipDues_Members">
+          <End Role="Members" Type="Self.Members" Multiplicity="1" />
+          <End Role="MembershipDues" Type="Self.MembershipDues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="MembershipDues">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="jrhbMembersModelStoreContainer">
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="jrhbAdmin" store:Type="Tables" />
+          <EntitySet Name="MembershipDues" EntityType="Self.MembershipDues" Schema="jrhbAdmin" store:Type="Tables" />
+          <AssociationSet Name="FK_MembershipDues_Members" Association="Self.FK_MembershipDues_Members">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="MembershipDues" EntitySet="MembershipDues" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="jrhbMembersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Name="MemberId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameFirst" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NameMiddle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NameLast" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneHome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneMobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneMobileText" Type="Boolean" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="HomebreweryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ProBrewer" Type="Boolean" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" />
+          <Property Name="DateMemberSince" Type="DateTime" Precision="0" />
+          <Property Name="DateLastModified" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MembershipDues" Relationship="jrhbMembersModel.FK_MembershipDues_Members" FromRole="Member" ToRole="MembershipDue" />
+        </EntityType>
+        <EntityType Name="MembershipDue">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClubYear" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="TXN_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayPalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PayPalInvoice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paid" Type="Boolean" Nullable="false" />
+          <Property Name="DateEntered" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="DatePaid" Type="DateTime" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MemberId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="jrhbMembersModel.FK_MembershipDues_Members" FromRole="MembershipDue" ToRole="Member" />
+        </EntityType>
+        <EntityContainer Name="jrhbMembersEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="MembershipDues" EntityType="Self.MembershipDue" />
+          <AssociationSet Name="FK_MembershipDues_Members" Association="jrhbMembersModel.FK_MembershipDues_Members">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="MembershipDue" EntitySet="MembershipDues" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_MembershipDues_Members">
+          <End Type="jrhbMembersModel.Member" Role="Member" Multiplicity="1" />
+          <End Type="jrhbMembersModel.MembershipDue" Role="MembershipDue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberId" />
+            </Principal>
+            <Dependent Role="MembershipDue">
+              <PropertyRef Name="MemberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="jrhbMembersModelStoreContainer" CdmEntityContainer="jrhbMembersEntities">
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="jrhbMembersModel.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="NameFirst" ColumnName="NameFirst" />
+                <ScalarProperty Name="NameMiddle" ColumnName="NameMiddle" />
+                <ScalarProperty Name="NameLast" ColumnName="NameLast" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneHome" ColumnName="PhoneHome" />
+                <ScalarProperty Name="PhoneMobile" ColumnName="PhoneMobile" />
+                <ScalarProperty Name="PhoneMobileText" ColumnName="PhoneMobileText" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="HomebreweryName" ColumnName="HomebreweryName" />
+                <ScalarProperty Name="ProBrewer" ColumnName="ProBrewer" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="DateMemberSince" ColumnName="DateMemberSince" />
+                <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MembershipDues">
+            <EntityTypeMapping TypeName="jrhbMembersModel.MembershipDue">
+              <MappingFragment StoreEntitySet="MembershipDues">
+                <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="ClubYear" ColumnName="ClubYear" />
+                <ScalarProperty Name="TXN_ID" ColumnName="TXN_ID" />
+                <ScalarProperty Name="PayPalStatus" ColumnName="PayPalStatus" />
+                <ScalarProperty Name="PayPalInvoice" ColumnName="PayPalInvoice" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="DateEntered" ColumnName="DateEntered" />
+                <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
