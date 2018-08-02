@@ -17,10 +17,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>02/16/2017 08:04:05</publishTime>
+      <publishTime>07/09/2017 10:50:04</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>02/16/2017 08:04:05</publishTime>
+      <publishTime>07/09/2017 10:50:04</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 08:32:26</publishTime>
@@ -29,10 +29,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 08:32:26</publishTime>
     </File>
     <File Include="bin/JamesRiverHBC.dll">
-      <publishTime>01/29/2017 21:45:52</publishTime>
+      <publishTime>07/09/2017 10:41:18</publishTime>
     </File>
     <File Include="bin/JamesRiverHBC.pdb">
-      <publishTime>01/29/2017 21:45:52</publishTime>
+      <publishTime>07/09/2017 10:41:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/03/2015 17:07:22</publishTime>
@@ -227,7 +227,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/29/2017 21:19:17</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>02/16/2017 08:04:01</publishTime>
+      <publishTime>07/09/2017 10:50:00</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/04/2016 18:31:21</publishTime>
@@ -293,7 +293,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/04/2016 18:31:32</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>01/29/2017 21:19:13</publishTime>
+      <publishTime>03/24/2017 07:17:55</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>12/04/2016 16:01:33</publishTime>
@@ -311,7 +311,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/04/2016 16:01:33</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>12/04/2016 16:01:33</publishTime>
+      <publishTime>04/26/2017 08:11:56</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>12/04/2016 16:01:33</publishTime>
@@ -335,13 +335,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/04/2016 19:53:57</publishTime>
     </File>
     <File Include="Views/Home/ClubEvents.cshtml">
-      <publishTime>02/15/2017 20:06:43</publishTime>
+      <publishTime>07/09/2017 10:49:32</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
       <publishTime>12/04/2016 21:12:40</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/16/2017 08:03:55</publishTime>
+      <publishTime>07/09/2017 10:48:17</publishTime>
     </File>
     <File Include="Views/Home/Meetings.cshtml">
       <publishTime>12/05/2016 14:41:44</publishTime>
@@ -386,7 +386,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/04/2016 16:01:33</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/15/2017 19:16:44</publishTime>
+      <publishTime>07/09/2017 10:42:26</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>12/04/2016 16:01:33</publishTime>
@@ -398,7 +398,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/04/2016 16:01:20</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/30/2017 06:37:55</publishTime>
+      <publishTime>07/09/2017 10:49:58</publishTime>
     </File>
   </ItemGroup>
 </Project>

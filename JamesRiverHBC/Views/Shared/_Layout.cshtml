@@ -26,10 +26,20 @@
                     <li>@Html.ActionLink("Meetings", "Meetings", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Club History", "About", "Home")</li>
-                    @*<li>@Html.ActionLink("Sign In", "Login", "Account/Login")</li>
+                    @*<li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            @Html.ActionLink("Sign Out", "Logoff", "Account/Logoff")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Sign In", "Login", "Account/Login")
+                        }
+                        
+                    </li>*@
                         <ul>
                             <li></li>
-                        </ul>*@
+                        </ul>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </div>
